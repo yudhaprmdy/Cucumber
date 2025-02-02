@@ -43,6 +43,8 @@ public class BMICalculatorDefinition {
                 } else {
                         Category = "Obese";
                 }
+
+                System.out.println(Category);
                 Assert.assertEquals(catExpected,Category);
         }
 
