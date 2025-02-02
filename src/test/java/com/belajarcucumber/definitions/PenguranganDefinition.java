@@ -1,0 +1,34 @@
+package com.belajarcucumber.definitions;
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.testng.Assert;
+
+public class PenguranganDefinition {
+    private int one;
+    private int two;
+    private int actual;
+
+    @Given("saya memiliki angka- {int}")
+    public void haveANumberOne(int one) {
+        this.one = one;
+    }
+
+    @And("saya memiliki angka kedua- {int}")
+    public void haveANumberTwo(int two) {
+        this.two = two;
+    }
+
+    @When("saya mengurangi angka pertama dengan angka kedua")
+    public void calculate() {
+        this.actual = this.one - this.two;
+    }
+
+    @Then("hasil pengurangan harus {int}")
+    public void resultMustBe(int expected) {
+        Assert.assertEquals(actual, expected);
+
+    }
+}
